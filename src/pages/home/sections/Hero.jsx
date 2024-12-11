@@ -1,5 +1,5 @@
 import React from "react";
-import PopularJobsCard from "./PopularJobsCard";
+import PopularJobsCard from "../../../components/PopularJobsCard";
 import { FaAirbnb, FaDiscord } from "react-icons/fa";
 import { SiNetflix } from "react-icons/si";
 
@@ -27,7 +27,7 @@ const popularJobs = [
   },
 ];
 
-const Home = () => {
+const Hero = () => {
   return (
     <section className='container mx-auto px-5 py-9'>
       <div>
@@ -35,13 +35,14 @@ const Home = () => {
           Get the most exciting jobs from around the world
         </p>
       </div>
-      <div className='mt-5 h-auto bg-sky-50 px-4 py-2 rounded-md'>
+      <div className='mt-5 h-auto bg-sky-50 px-4 py-4 rounded-md'>
         <p className='w-full bg-cyan-600 border rounded-lg text-white text-center py-3'>
           Popular jobs
         </p>
         {popularJobs.map((job) => {
           return (
             <PopularJobsCard
+              key={job.role}
               role={job.role}
               companyIcon={job.companyIcon}
               companyName={job.companyName}
@@ -55,4 +56,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Hero;
